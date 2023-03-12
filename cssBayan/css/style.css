@@ -1,0 +1,195 @@
+/*очищение стилей*/
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+}
+
+*,
+*:before,
+*:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+:focus,
+:active {
+  outline: none;
+}
+
+a:focus,
+a:active {
+  outline: none;
+}
+
+nav,
+footer,
+header,
+aside {
+  display: block;
+} /*блочный вид*/
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+  font-size: 100%;
+  line-height: 1; /*высотой строки или межстрочным интервалом.*/
+  font-size: 14px;
+  -ms-text-size-adjust: 100%;
+  -moz-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+a,
+a:visited {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: none;
+}
+ul,
+li {
+  list-style: none;
+}
+img {
+  vertical-align: top;
+}
+h1,
+h2 {
+  font-size: inherit;
+  font-weight: 400;
+}
+html {
+  font-size: 30px;
+}
+
+.body {
+  background-color: #f0f5f2;
+  font-size: 0.8rem;
+}
+.container {
+  max-width: 1450px;
+  margin: 0 auto;
+  padding: 15px;
+}
+.title {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+.bayan {
+  border-bottom: 2px solid #7c807e;
+}
+.item {
+  border-top: 2px solid #7c807e;
+}
+.link {
+  color: #f61da6;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 10px 10px 0;
+}
+.icon-open {
+  transform: rotate(90deg);
+}
+.link:hover {
+  text-decoration: none;
+}
+.icon-open,
+.icon-close {
+  display: none;
+  transition: 1s;
+}
+.bayan:hover .link {
+  color: black;
+}
+.bayan:hover .icon-open {
+  display: none;
+}
+
+.bayan:hover .icon-close {
+  display: block;
+}
+.image-container {
+  height: 0;
+  opacity: 0;
+  transition: height 1s;
+}
+.bayan__image {
+  opacity: 0;
+  width: 0px;
+  transition: width 1s;
+}
+.bayan__image img {
+  width: 100%;
+  height: 100%;
+}
+
+.item:hover .icon-open {
+  display: block;
+}
+.item:hover .icon-close {
+  display: none;
+}
+
+.link:hover ~ .image-container,
+.image-container:hover {
+  height: 305px;
+  opacity: 1;
+}
+.link:hover ~ .image-container .bayan__image,
+.image-container:hover .bayan__image {
+  opacity: 1;
+  border: 2px solid #c3bbad;
+  margin: 0 auto;
+  width: 300px;
+}
+.item:target .image-container {
+  height: 305px;
+  opacity: 1;
+}
+.item:target .link {
+  color: black;
+}
+.item:target .bayan__image {
+  opacity: 1;
+  border: 2px solid #c3bbad;
+  margin: 0 auto;
+  width: 300px;
+}
+
+.bayan:hover .item:target .icon-open {
+  display: block;
+}
+.bayan:hover .item:target .icon-close {
+  display: none;
+}
+
+@media (max-width: 320px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 820px) {
+  html {
+    font-size: 24px;
+  }
+}
+@media (max-width: 1920px) {
+  html {
+    font-size: 28px;
+  }
+}
+
+@media (hover: hover) {
+  .link:hover ~ .image-container,
+  .image-container:hover {
+    cursor: pointer;
+  }
+}
