@@ -104,27 +104,28 @@ h6 {
   border-top: 2px solid #7c807e;
 }
 .link {
+  text-decoration: none;
   display: flex;
   justify-content: space-between;
   padding: 10px 10px 10px 0;
 }
-.bayan__icon-open {
+.icon-open {
   transform: rotate(90deg);
 }
-.bayan__icon-open,
-.bayan__icon-close {
+.icon-open,
+.icon-close {
   display: none;
   transition: 1s;
 }
 
-.bayan:hover .bayan__icon-open {
+.bayan:hover .icon-open {
   display: none;
 }
 
-.bayan:hover .bayan__icon-close {
+.bayan:hover .icon-close {
   display: block;
 }
-.bayan__image-container {
+.image-container {
   height: 0;
   opacity: 0;
   transition: height 1s;
@@ -139,61 +140,42 @@ h6 {
   height: 100%;
 }
 
-.link:hover .bayan__icon-open {
+.item:hover .icon-open {
   display: block;
 }
-.link:hover .bayan__icon-close {
-  display: none;
-}
-.bayan__image-container:hover + .link > .bayan__icon-open {
-  display: block;
-}
-.bayan__image-container:hover + .link > .bayan__icon-close {
+.item:hover .icon-close {
   display: none;
 }
 
-.link:hover ~ .bayan__image-container {
-  height: 234px;
-  opacity: 1;
-}
-.link:hover ~ .bayan__image-container .bayan__image {
-  opacity: 1;
-  border: 2px solid #c3bbad;
-  margin: 0 auto;
-  width: 200px;
-}
-.bayan__image-container:hover {
+.link:hover ~ .image-container,
+.image-container:hover {
   cursor: pointer;
   height: 234px;
   opacity: 1;
 }
-.bayan__image-container:hover .bayan__image {
+.link:hover ~ .image-container .bayan__image,
+.image-container:hover .bayan__image {
+  opacity: 1;
+  border: 2px solid #c3bbad;
+  margin: 0 auto;
+  width: 200px;
+}
+.item:target .image-container {
+  height: 234px;
+  opacity: 1;
+}
+.item:target .bayan__image {
   opacity: 1;
   border: 2px solid #c3bbad;
   margin: 0 auto;
   width: 200px;
 }
 
-.bayan__image-container:target {
-  height: 234px;
-  opacity: 1;
+.bayan:hover .item:target .icon-open {
+  display: block;
 }
-.bayan__image-container:target .bayan__image {
-  opacity: 1;
-  border: 2px solid #c3bbad;
-  margin: 0 auto;
-  width: 200px;
-}
-
-.bayan__image-container:target {
-  height: 234px;
-  opacity: 1;
-}
-.bayan__image-container:target .bayan__image {
-  opacity: 1;
-  border: 2px solid #c3bbad;
-  margin: 30px auto;
-  width: 200px;
+.bayan:hover .item:target .icon-close {
+  display: none;
 }
 
 @media (min-width: 320px) {
