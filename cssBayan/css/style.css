@@ -145,6 +145,12 @@ h6 {
 .link:hover .bayan__icon-close {
   display: none;
 }
+.bayan__image-container:hover + .link > .bayan__icon-open {
+  display: block;
+}
+.bayan__image-container:hover + .link > .bayan__icon-close {
+  display: none;
+}
 
 .link:hover ~ .bayan__image-container {
   height: 234px;
@@ -153,9 +159,32 @@ h6 {
 .link:hover ~ .bayan__image-container .bayan__image {
   opacity: 1;
   border: 2px solid #c3bbad;
-  margin: 30px auto;
+  margin: 0 auto;
   width: 200px;
 }
+.bayan__image-container:hover {
+  cursor: pointer;
+  height: 234px;
+  opacity: 1;
+}
+.bayan__image-container:hover .bayan__image {
+  opacity: 1;
+  border: 2px solid #c3bbad;
+  margin: 0 auto;
+  width: 200px;
+}
+
+.bayan__image-container:target {
+  height: 234px;
+  opacity: 1;
+}
+.bayan__image-container:target .bayan__image {
+  opacity: 1;
+  border: 2px solid #c3bbad;
+  margin: 0 auto;
+  width: 200px;
+}
+
 .bayan__image-container:target {
   height: 234px;
   opacity: 1;
@@ -165,4 +194,12 @@ h6 {
   border: 2px solid #c3bbad;
   margin: 30px auto;
   width: 200px;
+}
+
+@media (min-width: 320px) {
+}
+
+@media (min-width: 820px) {
+}
+@media (min-width: 1920px) {
 }
